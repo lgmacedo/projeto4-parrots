@@ -1,0 +1,11 @@
+header{
+    font-size: 36px;
+    width: 100%;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
