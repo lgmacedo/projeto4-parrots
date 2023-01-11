@@ -59,6 +59,7 @@ function clicouCarta(qualCarta){
     cartaSelecionada.classList.add('selecionada');
     cartaSelecionada.style.transform = "rotateY(180deg)";
     cartaSelecionada.querySelector('img').src = `./img/${deckCartas[qualCarta-1]}`;
+    cartaSelecionada.querySelector('img').setAttribute("data-test", "face-up-image");
     if(selecionadaAntes !== null){
         selecionadaAntes.classList.remove('selecionada');
         cartaSelecionada.classList.remove('selecionada');
@@ -87,7 +88,9 @@ function clicouCarta(qualCarta){
                 selecionadaAntes.style.transform = "rotateY(-180deg)";
                 cartaSelecionada.style.transform = "rotateY(-180deg)";
                 cartaSelecionada.querySelector('img').src = './img/back.png';
+                cartaSelecionada.querySelector('img').setAttribute("data-test", "face-down-image");
                 selecionadaAntes.querySelector('img').src = './img/back.png';
+                selecionadaAntes.querySelector('img').setAttribute("data-test", "face-down-image");
             }
             setTimeout(desviraTudo, 1000);
         }
