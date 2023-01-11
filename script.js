@@ -17,6 +17,8 @@ let deckCartas = ["bobrossparrot.gif",
                     "tripletsparrot.gif", 
                     "unicornparrot.gif"];
 let contador = 0;
+let quantJogadas = 0;
+let quantCertas = 0;
 
 deckCartas = shuffleArray(deckCartas);
 
@@ -43,13 +45,12 @@ while(contador < deckCartas.length){
     contador++;
 }
 
-contador = 0;
-
 function clicouCarta(qualCarta){
     const cartaSelecionada = document.querySelector(`div:nth-child(${qualCarta})`);
     if(cartaSelecionada.classList.contains('correta')){
         return;
     }
+    quantJogadas++;
     const selecionadaAntes = document.querySelector('.selecionada');
     cartaSelecionada.classList.add('selecionada');
     cartaSelecionada.querySelector('img').src = `./img/${deckCartas[qualCarta-1]}`;
@@ -59,6 +60,10 @@ function clicouCarta(qualCarta){
         if(selecionadaAntes.querySelector('img').src === cartaSelecionada.querySelector('img').src){
             selecionadaAntes.classList.add('correta');
             cartaSelecionada.classList.add('correta');
+            quantCertas = quantCertas + 2;
+            if(quantCertas==numCartas){
+                setTimeout(`alert('Você ganhou em ${quantJogadas} jogadas!')`, 1000);
+            }
         }else{
             function desviraTudo(){
                 cartaSelecionada.querySelector('img').src = './img/back.png';
