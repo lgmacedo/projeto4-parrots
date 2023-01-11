@@ -48,6 +48,7 @@ function clicouCarta(qualCarta){
     quantJogadas++;
     const selecionadaAntes = document.querySelector('.selecionada');
     cartaSelecionada.classList.add('selecionada');
+    cartaSelecionada.style.transform = "rotateY(180deg)";
     cartaSelecionada.querySelector('img').src = `./img/${deckCartas[qualCarta-1]}`;
     if(selecionadaAntes !== null){
         selecionadaAntes.classList.remove('selecionada');
@@ -61,6 +62,8 @@ function clicouCarta(qualCarta){
             }
         }else{
             function desviraTudo(){
+                selecionadaAntes.style.transform = "rotateY(-180deg)";
+                cartaSelecionada.style.transform = "rotateY(-180deg)";
                 cartaSelecionada.querySelector('img').src = './img/back.png';
                 selecionadaAntes.querySelector('img').src = './img/back.png';
             }

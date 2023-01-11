@@ -34,6 +34,8 @@ div{
     align-items: center;
     cursor: pointer;
     border: 1px solid #99CEA8;
+    transition: all .5s;
+    transform-style: preserve-3d;
 }
 
 div img{
