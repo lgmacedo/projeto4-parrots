@@ -69,6 +69,18 @@ function clicouCarta(qualCarta){
             if(quantCertas==numCartas){
                 clearInterval(Timer);
                 setTimeout(`alert('Você ganhou em ${quantJogadas} jogadas! A duração do jogo foi de ${contador} segundos!')`, 1000);
+                function funcReinicio(){
+                    while(true){
+                        const querContinuar = prompt(`Gostaria de reiniciar a partida? Digite apenas "sim" e "não"`);
+                        if(querContinuar === "sim" || querContinuar === "não"){
+                            if(querContinuar==="sim"){
+                                location.reload();
+                            }
+                            break;
+                        }
+                    }
+                }
+                setTimeout(funcReinicio, 1000);
             }
         }else{
             function desviraTudo(){
