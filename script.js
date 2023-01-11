@@ -46,5 +46,25 @@ while(contador < deckCartas.length){
 contador = 0;
 
 function clicouCarta(qualCarta){
-    document.querySelector(`div:nth-child(${qualCarta}) img`).src = `./img/${deckCartas[qualCarta-1]}`;
+    const cartaSelecionada = document.querySelector(`div:nth-child(${qualCarta})`);
+    if(cartaSelecionada.classList.contains('correta')){
+        return;
+    }
+    const selecionadaAntes = document.querySelector('.selecionada');
+    cartaSelecionada.classList.add('selecionada');
+    cartaSelecionada.querySelector('img').src = `./img/${deckCartas[qualCarta-1]}`;
+    if(selecionadaAntes !== null){
+        selecionadaAntes.classList.remove('selecionada');
+        cartaSelecionada.classList.remove('selecionada');
+        if(selecionadaAntes.querySelector('img').src === cartaSelecionada.querySelector('img').src){
+            selecionadaAntes.classList.add('correta');
+            cartaSelecionada.classList.add('correta');
+        }else{
+            function desviraTudo(){
+                cartaSelecionada.querySelector('img').src = './img/back.png';
+                selecionadaAntes.querySelector('img').src = './img/back.png';
+            }
+            setTimeout(desviraTudo, 1000);
+        }
+    }
 }
