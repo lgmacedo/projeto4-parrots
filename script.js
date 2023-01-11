@@ -36,12 +36,21 @@ deckCartas = shuffleArray(deckCartas);
 
 
 while(contador < deckCartas.length){
-    document.querySelector(`div:nth-child(${contador+1})`).style.display = "flex";
+    document.querySelector(`main div:nth-child(${contador+1})`).style.display = "flex";
     contador++;
 }
 
+contador = 0;
+
+function incrementaSegundos(){
+    contador++;
+    document.querySelector('.timer').innerHTML = contador;
+}
+
+Timer = setInterval(incrementaSegundos, 1000);
+
 function clicouCarta(qualCarta){
-    const cartaSelecionada = document.querySelector(`div:nth-child(${qualCarta})`);
+    const cartaSelecionada = document.querySelector(`main div:nth-child(${qualCarta})`);
     if(cartaSelecionada.classList.contains('correta')){
         return;
     }
@@ -58,7 +67,8 @@ function clicouCarta(qualCarta){
             cartaSelecionada.classList.add('correta');
             quantCertas = quantCertas + 2;
             if(quantCertas==numCartas){
-                setTimeout(`alert('Você ganhou em ${quantJogadas} jogadas!')`, 1000);
+                clearInterval(Timer);
+                setTimeout(`alert('Você ganhou em ${quantJogadas} jogadas! A duração do jogo foi de ${contador} segundos!')`, 1000);
             }
         }else{
             function desviraTudo(){

@@ -24,7 +24,7 @@ main{
     margin: 0 auto;
 }
 
-div{
+main div{
     width: 117px;
     height: 146px;
     border-radius: 5px;
@@ -41,3 +41,15 @@ div{
 div img{
     width: 100px;
 }
+
+.timer{
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-weight: 700;
+    font-size: 36px;
+    color: #86BD8D;
+}
+
+
+
