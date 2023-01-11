@@ -22,8 +22,6 @@ let quantCertas = 0;
 
 deckCartas = shuffleArray(deckCartas);
 
-alert(deckCartas);
-
 while(true){
     numCartas = prompt("Com quantas cartas deseja jogar? (insira um número par, de 4 a 14)");
     if((numCartas % 2 === 0) && (numCartas >= 4) && (numCartas <= 14)){
@@ -32,12 +30,9 @@ while(true){
 }
 
 deckCartas = deckCartas.slice(0, numCartas/2);
-alert(deckCartas);
 deckCartas = deckCartas.concat(deckCartas);
-alert(deckCartas);
 
 deckCartas = shuffleArray(deckCartas);
-alert(deckCartas);
 
 
 while(contador < deckCartas.length){
