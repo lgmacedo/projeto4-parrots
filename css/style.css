@@ -29,12 +29,11 @@ div{
     height: 146px;
     border-radius: 5px;
     background-color: #A7E9AF;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
 
 div img{
     width: 100px;
-    height: 100px;
 }

@@ -9,13 +9,13 @@ function shuffleArray(array) {
 }
 
 let numCartas = 0;
-let deckCartas = ["bobrossparrot",
-                    "explodyparrot", 
-                    "fiestaparrot", 
-                    "metalparrot", 
-                    "revertitparrot", 
-                    "tripletsparrot", 
-                    "unicornparrot"];
+let deckCartas = ["bobrossparrot.gif",
+                    "explodyparrot.gif", 
+                    "fiestaparrot.gif", 
+                    "metalparrot.gif", 
+                    "revertitparrot.gif", 
+                    "tripletsparrot.gif", 
+                    "unicornparrot.gif"];
 let contador = 0;
 
 deckCartas = shuffleArray(deckCartas);
@@ -39,10 +39,12 @@ alert(deckCartas);
 
 
 while(contador < deckCartas.length){
-    document.querySelector('main').innerHTML += `<div onclick='clicouCarta(this)'><img src='./img/back.png' alt='verso-papagaio'></div>`;
+    document.querySelector(`div:nth-child(${contador+1})`).style.display = "flex";
     contador++;
 }
 
+contador = 0;
+
 function clicouCarta(qualCarta){
-    qualCarta.style.background = "blue";
+    document.querySelector(`div:nth-child(${qualCarta}) img`).src = `./img/${deckCartas[qualCarta-1]}`;
 }
