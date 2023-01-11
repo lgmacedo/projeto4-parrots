@@ -1,6 +1,7 @@
 header{
     font-size: 36px;
     width: 100%;
+    margin: 40px auto;
 }
 
 main{
@@ -8,4 +9,6 @@ main{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    margin-bottom: 34px;
 }
