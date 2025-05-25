@@ -3,7 +3,7 @@ name: Deploy to S3
 on:
   push:
     branches:
-      - main  # Altere para sua branch, se for diferente
+      - main
 
 permissions:
   contents: read
@@ -26,4 +26,4 @@ jobs:
 
       - name: Sync files to S3
         run: |
-          aws s3 sync ./ s3://parrots-card-game-driven-lgm --delete --acl public-read --exclude ".git/*" --exclude ".github/*"
+          aws s3 sync ./ s3://parrots-card-game-driven-lgm --delete --exclude ".git/*" --exclude ".github/*"
